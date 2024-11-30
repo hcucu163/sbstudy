@@ -1,0 +1,6 @@
+ docker run --name mysql \
+ -v /home/hcucu/App/mysql:/var/lib/mysql \
+ -e MYSQL_ROOT_PASSWORD=admin \
+ -p 3306:3306 \
+ --restart unless-stopped \
+ -d mysql

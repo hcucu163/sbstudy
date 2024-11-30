@@ -1,15 +1,42 @@
-…or create a new repository on the command line
+- [ ] springboot的启动流程
+- [ ] IDEA直接配置docker
+- [ ] 编写一个service
+- [ ] 使用页面模板
+  - [ ] 使用一个模板库，bootrap, antdesign
+- [ ] 数据库增删改查
+  - [ ] 添加用户管理
+  - [ ] 登录注册功能
+- [ ] 添加路由
+- [ ] 单元测试
+- [ ] 部署
+  - [ ] 打包成docker镜像
+  - [ ] 添加部署文档
+  - [ ] 部署到docker
 
-echo "# sbstudy" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/hcucu163/sbstudy.git
-git push -u origin main
+- [x] [使用JPA作数据库增删改查](Springboot使用JPA步骤.md)
+  - [x] 在pom.xml中添加JPA和mysql的依赖
+  - [ ] 在application.properties中添加数据库连接信息
+  - [ ] 创建一个实体，使用@entity, @table, @column注解
+  - [ ] 创建一个repository，使用@repository注解
+  - [ ] 创建一个service，使用@service注解
+  - [ ] 创建一个controller，使用@controller注解
+  - [ ] 创建一个测试类，使用@runWith(SpringRunner.class)和@SpringBootTest注解
+- [x] [Springboot推荐目录结构.md](Springboot推荐目录结构.md)
+- [x] intelliJ idea的ssh插件
+  已自带，tools -> start ssh session
+- [x] 安装一个数据库服务到docker容器中
+  - [x] 找到mysql的docker hub地址: https://hub.docker.com/
+  - [x] linux -> docker pull mysql
+    - [x] 启动mysql ->       docker run --name mysql-container -v /path/on/host:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=your_password -p 3306:3306 --restart unless-stopped -d mysql
+      * --name mysql-container 是给容器指定一个名称
+      * -e MYSQL_ROOT_PASSWORD=your_password 是设置 MySQL 的 root 密码
+      * -p 3306:3306 是将容器的 3306 端口映射到主机的 3306 端口
+      * -d 表示以后台模式运行容器。
+      * --restart 自启动
+      * -v /path/on/host:/var/lib/mysql 将主机上的 /path/on/host 目录挂载到容器的 /var/lib/mysql 目录
+  - [x] 设置mysql为自启动服务 -> systemctl enable docker -> 启动docker时加--restart unless-stopped
+  - [x] 配置mysql的本地存储
+  - [x] 配置mysql的用户名，密码
+  - [x] 配置mysql的端口
+  - [x] 在idea中添加mysql服务 -> 使用database标签
 
-…or push an existing repository from the command line
-
-git remote add origin https://github.com/hcucu163/sbstudy.git
-git branch -M main
-git push -u origin main
