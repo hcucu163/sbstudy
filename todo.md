@@ -6,10 +6,21 @@
 - [ ] 数据查询排序
 - [x] 添加路由
 - [ ] 单元测试
-- [ ] 部署
-  - [ ] 打包成docker镜像
-  - [ ] 添加部署文档
-  - [ ] 部署到docker
+- [ ] 构建一个CI/CD工作流，自动将改动的代码部署到远程测试服务器(docker)
+- [ ] [Springboot打包成微服务并部署在docker](Springboot打包成微服务并部署在docker.md)
+  - [x] 创建 Dockerfile：编写 Dockerfile 来定义如何构建 Docker 镜像。
+  - [ ] 构建 Docker 镜像：docker build -t sbstudy:latest .
+  - [ ] 运行 Docker 容器：docker run -d -p 8080:8080 --name sbstudy-container sbstudy:latest
+  - [ ] 验证部署：检查应用是否正常运行。curl http://localhost:8080
+  - [ ] 推送镜像到 Docker Hub（可选）：将镜像推送到 Docker Hub。
+    - [ ] docker login
+    - [ ] docker tag sbstudy:latest your-dockerhub-username/sbstudy:latest
+    - [ ] docker push your-dockerhub-username/sbstudy:latest
+  - [ ] 在远程服务器上部署（可选）：在远程服务器上拉取Docker Hub的镜像并运行容器。
+    - [ ] ssh your-remote-server
+    - [ ] docker pull your-dockerhub-username/sbstudy:latest
+    - [ ] docker run -d -p 8080:8080 --name sbstudy-container sbstudy:latest
+
 
 
 - [x] [使用JPA作数据库增删改查](Springboot使用JPA步骤.md)
