@@ -1,26 +1,38 @@
-- [ ] springboot的启动流程
+- [ ] 理解springboot的启动流程
 - [ ] IDEA直接配置docker
-- [ ] 编写一个service
-- [ ] 使用页面模板
-  - [ ] 使用一个模板库，bootrap, antdesign
-- [ ] 数据库增删改查
-  - [ ] 添加用户管理
-  - [ ] 登录注册功能
-- [ ] 添加路由
+- [ ] 使用一个模板库，bootrap, antdesign
+- [x] 数据库增删改查
+- [ ] 数据查询分页
+- [ ] 数据查询排序
+- [x] 添加路由
 - [ ] 单元测试
 - [ ] 部署
   - [ ] 打包成docker镜像
   - [ ] 添加部署文档
   - [ ] 部署到docker
 
+
 - [x] [使用JPA作数据库增删改查](Springboot使用JPA步骤.md)
   - [x] 在pom.xml中添加JPA和mysql的依赖
-  - [ ] 在application.properties中添加数据库连接信息
-  - [ ] 创建一个实体，使用@entity, @table, @column注解
-  - [ ] 创建一个repository，使用@repository注解
-  - [ ] 创建一个service，使用@service注解
-  - [ ] 创建一个controller，使用@controller注解
+  - [x] 在application.properties中添加数据库连接信息
+  - [x] 创建一个实体，使用@entity, @table, @column注解
+  - [x] 创建一个repository，使用@repository注解
+  - [x] 创建一个service，使用@service注解
+  - [x] 创建一个controller，使用@controller注解
   - [ ] 创建一个测试类，使用@runWith(SpringRunner.class)和@SpringBootTest注解
+- [x] 编写一个service
+- [x] @Autowired 做了什么？
+- [x] [使用页面模板显示model](Springboot使用模板显示model.md)
+  - [x] 添加Thymeleaf依赖
+  - [x] 创建一个模板文件
+    - [x] 创建.html作为模板文件，放在src/main/resources/templates下
+    - [x] 加入 <html xmlns:th="http://www.thymeleaf.org">
+    - [x] 使用 thymeleaf的th:text等标签，将model的值显示在页面上 <span th:text="${user.id}"></span>
+  - [x] 用@Controller注解创建一个控制器 (不是使用@RestController)
+    - [x] 在controller中设置model的值，返回模板文件
+    - [x] controller定义中加入Model对象: getAllUsers(Model modelUsers) => users
+    - [x] Model.addAttribute("users", users)
+    - [x] return "allusers"  (模板文件名: allusers.html)
 - [x] [Springboot推荐目录结构.md](Springboot推荐目录结构.md)
 - [x] intelliJ idea的ssh插件
   已自带，tools -> start ssh session
