@@ -1,4 +1,4 @@
-FROM openjdk:23
+FROM openjdk:17
 LABEL authors="hcucu"
 
 # 设置工作目录
