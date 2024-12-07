@@ -1,9 +1,16 @@
 - [ ] 理解springboot的启动流程
 - [ ] IDEA直接配置docker
 - [ ] 使用一个模板库，bootrap, antdesign
+- [ ] 使用内置验证器验证表单数据
 - [x] 数据库增删改查
 - [ ] 数据查询分页
 - [ ] 数据查询排序
+- [ ] 关系映射，一对多，多对多
+- [ ] Spring Security
+  - [ ] Shiro
+- [ ] Spring Cache - RedisTemplate
+- [ ] RabbitMQ
+- [ ] 使用JPQL
 - [x] 添加路由
 - [ ] 单元测试
 - [ ] 构建一个CI/CD工作流，自动将改动的代码部署到远程测试服务器(docker)
