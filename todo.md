@@ -7,7 +7,9 @@
 - [ ] 数据查询排序
 - [ ] 关系映射，一对多，多对多
 - [ ] Spring Security
-  - [ ] Shiro
+  - [ ] 了解概念
+  - [ ] 登录页
+  - [ ] thymeleaf与security的整合
 - [ ] Spring Cache - RedisTemplate
 - [ ] RabbitMQ
 - [ ] 使用JPQL
