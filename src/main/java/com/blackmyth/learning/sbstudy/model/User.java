@@ -1,19 +1,27 @@
 package com.blackmyth.learning.sbstudy.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 //import lombok.Data;
 //import org.springframework.data.annotation.Id;
+import jakarta.persistence.Table;
 
 //@Data
 @Entity
+@Table(name = "User")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "address")
     private String address;
 
     public Integer getId() {
@@ -50,7 +58,7 @@ public class User {
     }
 
     public User(String name, String addr) {
-//        this.id = id;
+        // this.id = id;
         this.name = name;
         this.address = addr;
     }
