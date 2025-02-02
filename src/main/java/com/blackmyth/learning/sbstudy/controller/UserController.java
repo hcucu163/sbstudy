@@ -4,24 +4,35 @@ import com.blackmyth.learning.sbstudy.model.User;
 import com.blackmyth.learning.sbstudy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
+// import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-//import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-//@RestController
-@Controller
+@RestController
+// @Controller
+@CrossOrigin
 public class UserController {
 
-    private UserService userService;
     @Autowired
-    public void setUserService(UserService userService) {
-        this.userService = userService;
+    private UserService userService;
+    
+    // @RequestMapping(value = "/user0", method = RequestMethod.GET)
+    @GetMapping(value = "/user0")
+    public String getUsers() {
+        return userService.getAllUsers().get(0).toString();
     }
+    
+    
+    // public void setUserService(UserService userService) {
+    //     this.userService = userService;
+    // }
     //    public UserController(UserService userService) {
     //        this.userService = userService;
     //    }
@@ -40,13 +51,31 @@ public class UserController {
 //        return userService.getUserById(id).get().toString();
     }
 
-    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    @RequestMapping(value = "/testusers", method = RequestMethod.GET)
     public String getAllUsers(Model modelUsers) { //  public List<User> getAllUsers() {
         List<User> users = userService.getAllUsers();
         modelUsers.addAttribute("users", users);
         return "users";
         //        StringBuffer sb = new StringBuffer();
         ////        sb.append();
+        //        for (User user : users) {
+        //            sb.append(user.toString());
+        //        }
+        //        return sb.toString();
+    }
+
+    
+    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    public List<User> getAllUsers() { //  public List<User> getAllUsers() {
+        List<User> users = userService.getAllUsers();
+        //convert users to json string
+        //return users.toString();
+        // System.out.println(users);
+        return users;
+        // modelUsers.addAttribute("users", users);
+        // return "users";
+        //        StringBuffer sb = new StringBuffer();
+        // //        sb.append();
         //        for (User user : users) {
         //            sb.append(user.toString());
         //        }
