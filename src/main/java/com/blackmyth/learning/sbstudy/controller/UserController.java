@@ -87,7 +87,7 @@ public class UserController {
         for (int i = 0; i < 10; i++) {
             User user = new User();
             user.setName("cucu_" + i);
-            user.setPassword(String.valueOf(i * 100));
+            user.setAddress(String.valueOf(i * 100));
             userService.saveUser(user);
         }
     }

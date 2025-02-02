@@ -14,7 +14,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private String password;
+    private String address;
 
     public Integer getId() {
         return id;
@@ -32,12 +32,12 @@ public class User {
         this.name = name;
     }
 
-    public String getPassword() {
-        return password;
+    public String getAddress() {
+        return address;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setAddress(String addr) {
+        this.address = addr;
     }
 
     @Override
@@ -45,14 +45,14 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", password='" + password + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 
-    public User(String name, String password) {
+    public User(String name, String addr) {
 //        this.id = id;
         this.name = name;
-        this.password = password;
+        this.address = addr;
     }
 
     public User() {
@@ -61,7 +61,7 @@ public class User {
     public User(Integer id, String name, String password) {
         this.id = id;
         this.name = name;
-        this.password = password;
+        this.address = password;
     }
 
 }
